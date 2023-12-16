@@ -138,7 +138,7 @@ async def send_file(client: Client, db_id, file_id: str, message):
             disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN, quote=True)
     else:
         await log_msg.reply_text(
-            text=f"reguested by : [{message.from_user.first_name}](tg://user?id={message.from_user.id})\nuser id : `{message.from_user.id}`\n file id : `{db_id}`\nStream Link : `https://telegbotnavpan2.onrender.com/watch/{db_id}`\nDownload Link : `https://telegbotnavpan2.onrender.com/dl/{db_id}`",
+            text=f"file id : `{db_id}`\nStream Link : `https://telegbotnavpan2.onrender.com/watch/{db_id}`\nDownload Link : `https://telegbotnavpan2.onrender.com/dl/{db_id}`",
             disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN, quote=True)
 
     return log_msg
