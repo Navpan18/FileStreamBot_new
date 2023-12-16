@@ -12,7 +12,18 @@ from FileStream import utils, StartTime, __version__
 from FileStream.utils.render_template import render_page
 
 routes = web.RouteTableDef()
-
+@routes.get("/", allow_head=True)
+async def root_route_handler(_):
+    return web.json_response(
+        {
+            "message": "HELLO WORLD!",
+            "uptime": utils.get_readable_time(time.time() - StartTime),
+            "telegram_bot": "@" + FileStream.username,
+            "connected_bots": len(multi_clients),
+            "version": __version__,
+        }
+    )
+    
 @routes.get("/status", allow_head=True)
 async def root_route_handler(_):
     return web.json_response(
