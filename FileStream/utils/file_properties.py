@@ -134,11 +134,11 @@ async def send_file(client: Client, db_id, file_id: str, message):
 
     if message.chat.type == ChatType.PRIVATE:
         await log_msg.reply_text(
-            text=f"**reguested by :** [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n**user id :** `{message.from_user.id}`\n**file id :** `{db_id}`\n**Stream Link :** `https://telegbotnavpan2.onrender.com/watch/{db_id}`\n**Download Link :** `https://telegbotnavpan2.onrender.com/dl/{db_id}`",
+            text=f"reguested by : [{message.from_user.first_name}](tg://user?id={message.from_user.id})\nuser id : `{message.from_user.id}`\n file id : `{db_id}`\nStream Link : `https://telegbotnavpan2.onrender.com/watch/{db_id}`\nDownload Link : `https://telegbotnavpan2.onrender.com/dl/{db_id}`",
             disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN, quote=True)
     else:
         await log_msg.reply_text(
-            text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** {message.chat.title} \n**Cʜᴀɴɴᴇʟ ɪᴅ :** `{message.chat.id}`\n**Fɪʟᴇ ɪᴅ :** `{db_id}`",
+            text=f"reguested by : [{message.from_user.first_name}](tg://user?id={message.from_user.id})\nuser id : `{message.from_user.id}`\n file id : `{db_id}`\nStream Link : `https://telegbotnavpan2.onrender.com/watch/{db_id}`\nDownload Link : `https://telegbotnavpan2.onrender.com/dl/{db_id}`",
             disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN, quote=True)
 
     return log_msg
