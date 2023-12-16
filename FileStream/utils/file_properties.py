@@ -128,7 +128,7 @@ async def update_file_id(msg_id, multi_clients):
 async def send_file(client: Client, db_id, file_id: str, message):
     file_caption = message.caption
     if file_caption is None:
-        file_caption = message.file_name
+        file_caption = 'okay'
     log_msg = await client.send_cached_media(chat_id=Telegram.LOG_CHANNEL, file_id=file_id,
                                              caption=f'**{file_caption}**')
 
